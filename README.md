@@ -41,7 +41,7 @@ One-time setup:
      -u "CLIENT_ID:CLIENT_SECRET" \
      -d "grant_type=authorization_code&code=CODE&redirect_uri=http://127.0.0.1:3000/callback"
    ```
-4. Copy `.env.example` to `.env.local` and fill in `SPOTIFY_CLIENT_ID`, `SPOTIFY_CLIENT_SECRET`, and the `refresh_token` from step 3. Add the same three vars in Vercel for production.
+4. Copy `.env.example` to `.env.local` and fill in `SPOTIFY_CLIENT_ID`, `SPOTIFY_CLIENT_SECRET`, and the `refresh_token` from step 3. Add the same three vars in your production host.
 
 ## Structure
 
@@ -65,7 +65,13 @@ Scroll (or swipe, or use arrow keys) to move through the story. Sections snap, a
 
 ## Deploy
 
-Push to GitHub and import into [Vercel](https://vercel.com/new). Environment variables are only needed for the Spotify widget. `npm run build` must pass (it does).
+Cloudflare Workers (recommended for this repo):
+
+- Build command: `npm run build`
+- Deploy command: `npm run deploy`
+- Add `SPOTIFY_CLIENT_ID`, `SPOTIFY_CLIENT_SECRET`, `SPOTIFY_REFRESH_TOKEN` as Production secrets
+
+Vercel also works with the default Next.js settings.
 
 ## License
 
