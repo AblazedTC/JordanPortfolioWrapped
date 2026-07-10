@@ -2,17 +2,20 @@ import { NextResponse } from "next/server";
 
 export const dynamic = "force-dynamic";
 
+function inactive(reason: string) {
+  return NextResponse.json({ active: false, reason });
+}
+
 /**
  * Jordan's top 10 Spotify tracks (~last 6 months). Same personal refresh-token
  * flow as /api/now-playing; needs the user-top-read scope on the token.
- * Unconfigured or missing scope => { active: false } and the section hides.
  */
 export async function GET() {
   const { SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, SPOTIFY_REFRESH_TOKEN } =
     process.env;
 
   if (!SPOTIFY_CLIENT_ID || !SPOTIFY_CLIENT_SECRET || !SPOTIFY_REFRESH_TOKEN) {
-    return NextResponse.json({ active: false });
+    return inactive("missing_env");
   }
 
   try {
@@ -30,14 +33,25 @@ export async function GET() {
       }),
       cache: "no-store",
     });
+
+    if (!tokenRes.ok) {
+      return inactive("token_exchange_failed");
+    }
+
     const { access_token } = await tokenRes.json();
-    if (!access_token) return NextResponse.json({ active: false });
+    if (!access_token) {
+      return inactive("missing_access_token");
+    }
 
     const res = await fetch(
       "https://api.spotify.com/v1/me/top/tracks?limit=10&time_range=medium_term",
-      { headers: { Authorization: `Bearer ${access_token}` }, cache: "no-store" }
+      {
+        headers: { Authorization: `Bearer ${access_token}` },
+        cache: "no-store",
+      }
     );
-    if (!res.ok) return NextResponse.json({ active: false });
+
+    if (!res.ok) return inactive(`spotify_${res.status}`);
 
     const items = (await res.json()).items ?? [];
     return NextResponse.json({
@@ -57,6 +71,6 @@ export async function GET() {
       ),
     });
   } catch {
-    return NextResponse.json({ active: false });
+    return inactive("request_failed");
   }
 }
