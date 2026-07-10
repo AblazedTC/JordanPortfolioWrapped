@@ -189,7 +189,7 @@ export const debugStats = {
 };
 
 export const finalRecap = {
-  headline: "Want the full tracklist?",
+  headline: "Want the rest of the set?",
   message: "Let's build something worth replaying.",
   ticker: "JORDAN WRAPPED | SOFTWARE ENGINEER | BACKEND | AI | MUSIC TECH | ",
 };

@@ -17,6 +17,29 @@ export const metadata: Metadata = {
   title: "Jordan Wrapped | Jordan Jerkins, Software Engineer",
   description:
     "Jordan Jerkins' portfolio with projects, internships, tech stack, and growth.",
+  metadataBase: new URL("https://jordanjerkins.dev"),
+  openGraph: {
+    title: "Jordan Wrapped | Jordan Jerkins",
+    description:
+      "Jordan Jerkins' portfolio with projects, internships, tech stack, and growth.",
+    url: "https://jordanjerkins.dev",
+    siteName: "Jordan Wrapped",
+    images: [
+      {
+        url: "/logo.svg",
+        width: 512,
+        height: 512,
+        alt: "Jordan Wrapped logo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Jordan Wrapped | Jordan Jerkins",
+    description:
+      "Jordan Jerkins' portfolio with projects, internships, tech stack, and growth.",
+    images: ["/logo.svg"],
+  },
   icons: {
     icon: "/logo.svg",
   },
