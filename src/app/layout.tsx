@@ -14,9 +14,9 @@ const body = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Jordan Wrapped — Jordan Jerkins, Software Engineer",
+  title: "Jordan Wrapped | Jordan Jerkins, Software Engineer",
   description:
-    "A Wrapped-style portfolio: AI-powered systems for audio, automation, and real-time applications. Projects, internships, stack, and growth by Jordan Jerkins.",
+    "Jordan Jerkins' portfolio with projects, internships, tech stack, and growth.",
   icons: {
     icon: "/logo.svg",
   },
