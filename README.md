@@ -1,12 +1,12 @@
 # Jordan Wrapped
 
-A Spotify Wrapped-inspired personal portfolio for **Jordan Jerkins** — software engineer building AI-powered systems for audio, automation, and real-time applications.
+A Spotify Wrapped-style portfolio for **Jordan Jerkins**: software engineer building AI-powered systems for audio, automation, and real-time applications.
 
-Instead of a static portfolio page, this is an animated, slide-based "year in review": top technologies, featured projects (MusicDecoded), internships (ADP, NICE), most improved skills, leadership, build stats, and an engineering timeline.
+Instead of a static portfolio page, this is an animated, slide-based "year in review": top technologies, featured project (MusicDecoded), project catalog, internships (ADP, NICE), skill growth, leadership, build stats, and a live "now playing" feed from my actual Spotify account.
 
 Built with **Next.js 15, TypeScript, Tailwind CSS, and GSAP**.
 
-> Adapted from the open-source [Spotiwrap](https://github.com/lumi-work/spotiwrap) project (MIT). All Spotify auth, API calls, and branding were removed — this project uses only local data and is not affiliated with Spotify.
+> Adapted from the open-source [Spotiwrap](https://github.com/lumi-work/spotiwrap) project (MIT). Not affiliated with Spotify.
 
 ## Run locally
 
@@ -17,24 +17,22 @@ npm run dev
 
 Open http://localhost:3000.
 
-## Edit portfolio content
+## Edit content
 
-All content lives in **`src/data/portfolio.ts`** — components just map over it. Update:
+All content lives in **`src/data/portfolio.ts`**; components just map over it:
 
-- `personal.links` — GitHub, LinkedIn, email, resume URL (drop `resume.pdf` into `/public`)
+- `personal` and `links`: name, GitHub, LinkedIn, email, resume (PDF in `public/Resume/`)
 - `topTech`, `mostPlayed`, `catalog`, `skillJump`, `internships`, `debugStats`, `listening`, `finalRecap`
 
-Placeholder links are marked with `// <-- update` comments.
+## Spotify integration (optional)
 
-## Spotify "Now Playing" (optional)
-
-The Listening section shows what I'm actually playing on Spotify. It's **my** account read server-side — visitors never log in. Without env vars the section gracefully shows an "off air" state, so this is fully optional.
+The Listening section shows what I'm actually playing plus my top tracks. It reads **my** account server-side; visitors never log in. Without env vars the section shows an "off air" state, so this is fully optional.
 
 One-time setup:
 
 1. Create an app at [developer.spotify.com/dashboard](https://developer.spotify.com/dashboard) and add `http://127.0.0.1:3000/callback` as a redirect URI.
 2. Visit (with your client ID filled in):
-   `https://accounts.spotify.com/authorize?client_id=CLIENT_ID&response_type=code&redirect_uri=http://127.0.0.1:3000/callback&scope=user-read-currently-playing%20user-read-recently-played`
+   `https://accounts.spotify.com/authorize?client_id=CLIENT_ID&response_type=code&redirect_uri=http://127.0.0.1:3000/callback&scope=user-read-currently-playing%20user-read-recently-played%20user-top-read`
    and copy the `code` from the redirect URL.
 3. Exchange it for a refresh token:
    ```bash
@@ -51,24 +49,24 @@ One-time setup:
 src/
   data/portfolio.ts          # all content (edit this)
   app/page.tsx               # section order
-  app/api/now-playing/       # Spotify now-playing route (optional env vars)
+  app/api/now-playing/       # live Spotify player (optional env vars)
+  app/api/top-tracks/        # Spotify top tracks (optional env vars)
   components/story/
     StoryScroller.tsx        # GSAP ScrollTrigger orchestration, swipe/arrow nav
-    IntroLoader.tsx          # startup split-text loading animation
+    IntroLoader.tsx          # startup loading animation
     NowPlayingCard.tsx       # live Spotify player card
     Section.tsx              # full-screen color-blocked snap section
     KineticText.tsx          # word-split headline reveals
     Sticker.tsx / StickerLink.tsx  # sticker chips and CTA buttons
-    Waveform.tsx             # animated equalizer bars
     sections/                # one component per story section
 ```
 
-Scroll (or swipe left/right, or use ←/→ arrow keys) to move through the story — sections snap, animations trigger on entry, and everything respects `prefers-reduced-motion`.
+Scroll (or swipe, or use arrow keys) to move through the story. Sections snap, animations trigger on entry, and everything respects `prefers-reduced-motion`.
 
 ## Deploy
 
-Push to GitHub and import into [Vercel](https://vercel.com/new) — environment variables are only needed for the optional Spotify widget. `npm run build` must pass (it does).
+Push to GitHub and import into [Vercel](https://vercel.com/new). Environment variables are only needed for the Spotify widget. `npm run build` must pass (it does).
 
 ## License
 
-MIT — see [LICENSE](./LICENSE). Original Spotiwrap copyright (c) 2024 lumi.
+MIT, see [LICENSE](./LICENSE). Original Spotiwrap copyright (c) 2024 lumi.

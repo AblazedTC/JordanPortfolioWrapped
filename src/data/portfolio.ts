@@ -101,7 +101,7 @@ export const catalog = {
       description:
         "Spotify Wrapped-style interactive portfolio with scroll-linked motion and live now-playing data.",
       stack: ["Next.js", "GSAP", "TypeScript", "Spotify API"],
-      link: "",
+      link: "https://github.com/AblazedTC/JordanPortfolioWrapped",
     },
   ],
 };

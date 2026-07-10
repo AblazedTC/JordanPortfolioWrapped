@@ -6,7 +6,7 @@ import Waveform from "../Waveform";
 import { Rings, Blob, Sparkle } from "../Doodles";
 import PackIcon from "../PackIcon";
 import { mostPlayed } from "@/data/portfolio";
-import { Github, BookOpen, Play, SkipBack, SkipForward, Heart } from "lucide-react";
+import { Github, BookOpen, Play, SkipBack, SkipForward, Heart, ArrowUpRight } from "lucide-react";
 
 export default function MostPlayedSection() {
   return (
@@ -35,10 +35,13 @@ export default function MostPlayedSection() {
       />
 
       <div className="mt-8 grid gap-8 lg:grid-cols-[1.1fr_1fr] lg:items-start">
-        {/* music-player card */}
-        <div
+        {/* music-player card - links to the repo */}
+        <a
+          href={mostPlayed.githubUrl}
+          target="_blank"
+          rel="noopener noreferrer"
           data-animate
-          className="border-[3px] border-[var(--acc)] bg-[#1c1c1c] p-5 shadow-[8px_8px_0_var(--acc)] sm:p-7"
+          className="block border-[3px] border-[var(--acc)] bg-[#1c1c1c] p-5 shadow-[8px_8px_0_var(--acc)] transition-[transform,box-shadow] hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0_var(--acc)] sm:p-7"
         >
           <div className="flex gap-3">
             {/* eslint-disable-next-line @next/next/no-img-element -- local static art */}
@@ -77,7 +80,11 @@ export default function MostPlayedSection() {
             <SkipForward size={22} className="opacity-70" />
             <Heart size={20} className="text-[var(--acc)]" fill="currentColor" />
           </div>
-        </div>
+
+          <p className="mt-4 flex items-center justify-center gap-1 text-[11px] font-black uppercase tracking-widest text-[var(--acc)]">
+            View the repo on GitHub <ArrowUpRight size={14} strokeWidth={3} />
+          </p>
+        </a>
 
         <div>
           <p data-animate className="text-base leading-relaxed opacity-90">
@@ -99,7 +106,7 @@ export default function MostPlayedSection() {
           </dl>
           <div className="mt-7 flex flex-wrap gap-4">
             <StickerLink href={mostPlayed.githubUrl}>
-              <Github size={16} /> GitHub
+              <Github size={16} /> Check it out on GitHub <ArrowUpRight size={16} strokeWidth={3} />
             </StickerLink>
             {mostPlayed.caseStudyUrl && (
               <StickerLink

@@ -5,6 +5,7 @@ import TopoLines from "../TopoLines";
 import { Blob, Sparkle } from "../Doodles";
 import PackIcon from "../PackIcon";
 import { catalog } from "@/data/portfolio";
+import { ArrowUpRight } from "lucide-react";
 
 export default function CatalogSection() {
   return (
@@ -58,6 +59,11 @@ export default function CatalogSection() {
               <p className="mt-3 text-[11px] font-black uppercase tracking-wide opacity-60">
                 {p.stack.join(" · ")}
               </p>
+              {p.link && (
+                <p className="mt-3 flex items-center gap-1 border-t-[3px] border-black pt-2 text-[11px] font-black uppercase tracking-widest text-[#4100F5]">
+                  View on GitHub <ArrowUpRight size={14} strokeWidth={3} />
+                </p>
+              )}
             </>
           );
           const cls =
