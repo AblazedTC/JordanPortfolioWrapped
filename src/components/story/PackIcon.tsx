@@ -29,27 +29,3 @@ export default function PackIcon({
     />
   );
 }
-
-/** Seamless marquee strip of pack icons (pair with .js-ticker loop). */
-export function IconMarquee({
-  icons,
-  className,
-}: {
-  icons: string[];
-  className?: string;
-}) {
-  const row = [...icons, ...icons];
-  return (
-    <div className={cn("overflow-hidden", className)} aria-hidden>
-      <div className="js-ticker flex w-max items-center gap-10 py-3">
-        {[0, 1].map((half) => (
-          <div key={half} className="flex items-center gap-10">
-            {row.map((icon, i) => (
-              <PackIcon key={i} icon={icon} className="h-8 w-8 shrink-0" />
-            ))}
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}

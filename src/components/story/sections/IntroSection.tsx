@@ -3,7 +3,7 @@ import KineticText from "../KineticText";
 import Sticker from "../Sticker";
 import Waveform from "../Waveform";
 import TopoLines from "../TopoLines";
-import { IconMarquee } from "../PackIcon";
+import IconMarquee from "../IconMarquee";
 import { Sparkle, Flower, Squiggle, Arrow, Star, Bolt, Zigzag } from "../Doodles";
 import { personal } from "@/data/portfolio";
 

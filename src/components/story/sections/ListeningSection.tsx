@@ -4,7 +4,8 @@ import Sticker from "../Sticker";
 import NowPlayingCard from "../NowPlayingCard";
 import Waveform from "../Waveform";
 import { Rings, Blob, Vinyl } from "../Doodles";
-import PackIcon, { IconMarquee } from "../PackIcon";
+import PackIcon from "../PackIcon";
+import IconMarquee from "../IconMarquee";
 import WavyText from "../WavyText";
 import { listening } from "@/data/portfolio";
 
