@@ -13,10 +13,11 @@ export default function TopSongsSection() {
     >
       <Arches className="absolute inset-x-0 bottom-0 text-[#F774C4]/60" />
       <div aria-hidden className="halftone pointer-events-none absolute left-0 top-[30%] h-56 w-36 text-[#4100F5]/25" />
-      {/* cropped giant letterform bleeding off the edge */}
+      <div aria-hidden className="halftone-lg pointer-events-none absolute bottom-[6%] right-[6%] h-40 w-44 text-[#F774C4]/40" />
+      {/* giant number, mesh gradient revealed through the letterforms (masking) */}
       <span
         aria-hidden
-        className="font-display text-outline pointer-events-none absolute -right-10 -top-16 select-none text-[16rem] leading-none text-[#4100F5]/50"
+        className="text-clip-mesh font-display pointer-events-none absolute -right-10 -top-16 select-none text-[16rem] leading-none"
       >
         10
       </span>

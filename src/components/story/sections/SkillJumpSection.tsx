@@ -12,6 +12,8 @@ export default function SkillJumpSection() {
       <Blob data-drift className="absolute -right-24 bottom-[6%] hidden h-72 w-72 text-[#FAE62D]/40 lg:block" />
       <Rings data-drift className="absolute -left-16 top-[8%] text-[#F774C4] opacity-50" />
       <div aria-hidden className="stripes pointer-events-none absolute bottom-0 right-[26%] h-28 w-48 text-[#121212]/25" />
+      {/* gradient-mesh arch, exclusion-blended for shifting color */}
+      <span aria-hidden className="mesh-dark blend-exclusion clip-blob pointer-events-none absolute -left-20 bottom-[8%] hidden h-72 w-72 opacity-50 lg:block" />
       {/* arrow curls toward the skill bars */}
       <Arrow data-float className="absolute right-[8%] top-[38%] hidden h-20 w-20 -scale-x-100 rotate-[130deg] text-[#121212] md:block" />
       <Sparkle data-float className="absolute bottom-[14%] left-[3%] hidden h-10 w-10 text-[#FAE62D] lg:block" />

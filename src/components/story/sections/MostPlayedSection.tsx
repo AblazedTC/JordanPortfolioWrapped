@@ -41,7 +41,7 @@ export default function MostPlayedSection() {
           target="_blank"
           rel="noopener noreferrer"
           data-animate
-          className="block border-[3px] border-[var(--acc)] bg-[#1c1c1c] p-5 shadow-[8px_8px_0_var(--acc)] transition-[transform,box-shadow] hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0_var(--acc)] sm:p-7"
+          className="block min-w-0 border-[3px] border-[var(--acc)] bg-[#1c1c1c] p-5 shadow-[8px_8px_0_var(--acc)] transition-[transform,box-shadow] hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0_var(--acc)] sm:p-7"
         >
           <div className="flex gap-3">
             {/* eslint-disable-next-line @next/next/no-img-element -- local static art */}
@@ -50,7 +50,7 @@ export default function MostPlayedSection() {
               alt="Jordan playing piano"
               className="h-32 w-32 shrink-0 border-[3px] border-white/20 object-cover sm:h-40 sm:w-40"
             />
-            <div className="flex h-32 flex-1 items-end border-[3px] border-white/20 bg-black p-3 sm:h-40">
+            <div className="flex h-32 min-w-0 flex-1 items-end border-[3px] border-white/20 bg-black p-3 sm:h-40">
               <Waveform bars={24} className="h-full w-full text-[var(--acc)]" />
             </div>
           </div>
@@ -86,7 +86,7 @@ export default function MostPlayedSection() {
           </p>
         </a>
 
-        <div>
+        <div className="min-w-0">
           <p data-animate className="text-base leading-relaxed opacity-90">
             {mostPlayed.description}
           </p>

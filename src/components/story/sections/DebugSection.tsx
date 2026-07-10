@@ -1,7 +1,7 @@
 import Section from "../Section";
 import KineticText from "../KineticText";
 import Sticker from "../Sticker";
-import { Burst, Squiggle, Vinyl, Rings, Blob } from "../Doodles";
+import { Burst, Squiggle, Vinyl, Rings, Blob, Spiral, Star } from "../Doodles";
 import { debugStats } from "@/data/portfolio";
 
 export default function DebugSection() {
@@ -14,6 +14,8 @@ export default function DebugSection() {
       <Rings data-drift className="absolute -left-20 top-[20%] text-[#FF6437] opacity-50" />
       <Blob data-drift className="absolute -right-16 top-[10%] hidden h-56 w-56 text-[#F774C4]/40 lg:block" />
       <div aria-hidden className="halftone pointer-events-none absolute bottom-[8%] left-[8%] h-40 w-56 text-[#4100F5]/30" />
+      {/* tritone color-block bar bleeding off the right edge */}
+      <div aria-hidden className="tritone blend-multiply pointer-events-none absolute right-0 top-[30%] hidden h-24 w-40 opacity-70 lg:block" style={{ rotate: "-6deg" }} />
       {/* cropped giant letterform */}
       <span
         aria-hidden
@@ -24,6 +26,8 @@ export default function DebugSection() {
       <Burst data-spin data-drift className="absolute left-[6%] top-[14%] hidden h-16 w-16 text-[#4100F5] md:block" />
       <Vinyl data-spin className="absolute bottom-[12%] right-[5%] hidden h-20 w-20 text-[#F774C4] lg:block" />
       <Squiggle data-drift className="absolute right-[10%] top-[22%] hidden rotate-12 text-[#FF6437] lg:block" />
+      <Spiral data-spin className="absolute left-[10%] top-[40%] hidden h-16 w-16 text-[#4100F5] lg:block" />
+      <Star data-float className="absolute right-[16%] bottom-[24%] hidden h-11 w-11 text-[#FF6437] md:block" />
 
       <Sticker rotate={-3}>{debugStats.kicker}</Sticker>
       <KineticText
@@ -39,7 +43,7 @@ export default function DebugSection() {
         >
           {debugStats.bigNumber}
         </span>
-        <p className="stretch-tall font-display relative text-[clamp(6rem,22vw,16rem)] leading-none tracking-tight">
+        <p className="chroma-hard stretch-tall font-display relative text-[clamp(6rem,22vw,16rem)] leading-none tracking-tight">
           <span className="js-count" data-value={debugStats.bigNumber}>
             0
           </span>

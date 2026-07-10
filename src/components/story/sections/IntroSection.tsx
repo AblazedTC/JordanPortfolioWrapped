@@ -4,7 +4,7 @@ import Sticker from "../Sticker";
 import Waveform from "../Waveform";
 import TopoLines from "../TopoLines";
 import { IconMarquee } from "../PackIcon";
-import { Sparkle, Flower, Squiggle, Arrow } from "../Doodles";
+import { Sparkle, Flower, Squiggle, Arrow, Star, Bolt, Zigzag } from "../Doodles";
 import { personal } from "@/data/portfolio";
 
 export default function IntroSection() {
@@ -14,10 +14,14 @@ export default function IntroSection() {
     >
       {/* animated topographic flow lines */}
       <TopoLines className="left-0 top-0 text-[#CFF56A]" />
-      {/* cropped giant letterform bleeding off the edge */}
+      {/* halftone dot shadow fading up from the bottom */}
+      <div aria-hidden className="halftone-fade pointer-events-none absolute bottom-0 right-[12%] h-52 w-64 text-[#CFF56A]/40" />
+      {/* tritone color-block bar bleeding off the left edge */}
+      <div aria-hidden className="tritone blend-multiply pointer-events-none absolute left-0 top-[22%] hidden h-20 w-36 opacity-70 lg:block" style={{ rotate: "-7deg" }} />
+      {/* cropped giant letterform bleeding off the edge, mesh revealed through it */}
       <span
         aria-hidden
-        className="font-display pointer-events-none absolute -bottom-24 -right-8 select-none text-[20rem] leading-none text-white/10"
+        className="text-clip-mesh font-display pointer-events-none absolute -bottom-24 -right-8 select-none text-[20rem] leading-none opacity-80"
       >
         26
       </span>
@@ -27,6 +31,9 @@ export default function IntroSection() {
         <Sparkle data-float className="absolute -top-14 left-[55%] text-[#FAE62D]" />
         <Flower data-spin className="absolute right-[22%] top-[38%] hidden h-20 w-20 text-[#F774C4] lg:block" />
         <Sparkle data-float className="absolute bottom-[30%] right-[8%] hidden h-8 w-8 text-[#FF6437] md:block" />
+        <Star data-float className="absolute -top-10 left-[30%] hidden h-10 w-10 text-[#CFF56A] md:block" />
+        <Bolt data-float className="absolute right-[14%] top-[64%] hidden h-14 w-10 text-[#FAE62D] lg:block" />
+        <Zigzag className="absolute left-[8%] top-[8%] hidden w-32 text-[#FF6437] lg:block" />
 
         {/* warped text on a circular path, spinning */}
         <svg
@@ -55,7 +62,7 @@ export default function IntroSection() {
           <img
             src="/pfp/profilepic.JPG"
             alt="Jordan Jerkins"
-            className="h-40 w-36 object-cover lg:h-52 lg:w-44"
+            className="chroma-box h-40 w-36 object-cover lg:h-52 lg:w-44"
           />
           <p className="mt-2 text-center font-display text-xs uppercase tracking-widest text-black">
             the artist

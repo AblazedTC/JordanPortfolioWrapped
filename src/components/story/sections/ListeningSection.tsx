@@ -17,6 +17,8 @@ export default function ListeningSection() {
       <Rings data-drift className="absolute -right-16 -top-10 text-[#121212] opacity-40" />
       <Blob data-drift className="absolute -left-16 bottom-[20%] h-56 w-56 text-[#4100F5]/30" />
       <div aria-hidden className="halftone pointer-events-none absolute bottom-0 left-[30%] h-40 w-72 text-[#121212]/30" />
+      {/* gradient-mesh corner wash, screen-blended */}
+      <span aria-hidden className="mesh blend-screen pointer-events-none absolute -right-10 -top-10 hidden h-64 w-64 rounded-full opacity-50 blur-sm md:block" />
       <Vinyl data-spin className="absolute bottom-[10%] right-[10%] hidden h-24 w-24 text-[#CFF56A] md:block" />
       {/* scattered music-icon collage */}
       <PackIcon data-float icon="boombox" className="absolute left-[12%] top-[10%] hidden h-14 w-14 -rotate-6 text-[#121212] md:block" />

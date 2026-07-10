@@ -97,3 +97,98 @@ body {
   transform: scaleX(1.25);
   transform-origin: left;
 }
+
+/* gradient mesh — complex multi-point gradients that bend across a shape */
+.mesh {
+  background-color: #4100f5;
+  background-image:
+    radial-gradient(at 18% 22%, #f774c4 0px, transparent 55%),
+    radial-gradient(at 82% 12%, #fae62d 0px, transparent 50%),
+    radial-gradient(at 70% 78%, #cff56a 0px, transparent 55%),
+    radial-gradient(at 28% 84%, #ff6437 0px, transparent 50%);
+}
+.mesh-dark {
+  background-color: #121212;
+  background-image:
+    radial-gradient(at 15% 18%, #4100f5 0px, transparent 55%),
+    radial-gradient(at 85% 25%, #f774c4 0px, transparent 45%),
+    radial-gradient(at 75% 85%, #509bf5 0px, transparent 50%),
+    radial-gradient(at 20% 80%, #cff56a 0px, transparent 45%);
+}
+
+/* tritone color blocking — three flat bold regions */
+.tritone {
+  background-image: linear-gradient(
+    115deg,
+    #f774c4 0 33%,
+    #fae62d 33% 66%,
+    #509bf5 66% 100%
+  );
+}
+
+/* halftone variants (dot texture) */
+.halftone-fine {
+  background-image: radial-gradient(currentColor 1px, transparent 1px);
+  background-size: 8px 8px;
+}
+.halftone-lg {
+  background-image: radial-gradient(currentColor 2.6px, transparent 2.6px);
+  background-size: 22px 22px;
+}
+/* halftone gradient — dots fade out (graphic shadow) */
+.halftone-fade {
+  background-image: radial-gradient(currentColor 1.8px, transparent 1.8px);
+  background-size: 15px 15px;
+  -webkit-mask-image: linear-gradient(to bottom, #000, transparent);
+  mask-image: linear-gradient(to bottom, #000, transparent);
+}
+
+/* chromatic aberration on any box/image (not just text) */
+.chroma-box {
+  filter:
+    drop-shadow(2px 0 0 rgba(255, 100, 55, 0.55))
+    drop-shadow(-2px 0 0 rgba(80, 155, 245, 0.55));
+}
+
+/* strong chromatic split on display text */
+.chroma-hard {
+  text-shadow:
+    5px 0 0 rgba(255, 100, 55, 0.85),
+    -5px 0 0 rgba(80, 155, 245, 0.85),
+    0 3px 0 rgba(207, 245, 106, 0.6);
+}
+
+/* blend-mode helpers for overlapping color layers */
+.blend-multiply {
+  mix-blend-mode: multiply;
+}
+.blend-screen {
+  mix-blend-mode: screen;
+}
+.blend-difference {
+  mix-blend-mode: difference;
+}
+.blend-exclusion {
+  mix-blend-mode: exclusion;
+}
+.blend-overlay {
+  mix-blend-mode: overlay;
+}
+
+/* masking / clipping — reveal an image or gradient through the text itself */
+.text-clip-mesh {
+  background-color: #4100f5;
+  background-image:
+    radial-gradient(at 20% 20%, #f774c4 0px, transparent 55%),
+    radial-gradient(at 80% 15%, #fae62d 0px, transparent 50%),
+    radial-gradient(at 65% 80%, #cff56a 0px, transparent 55%),
+    radial-gradient(at 30% 85%, #ff6437 0px, transparent 50%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+/* clip content into a blob-ish shape (masking + clipping) */
+.clip-blob {
+  border-radius: 62% 38% 46% 54% / 54% 44% 56% 46%;
+  overflow: hidden;
+}
