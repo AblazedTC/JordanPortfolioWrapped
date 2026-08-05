@@ -96,6 +96,14 @@ export const catalog = {
       link: "https://github.com/AblazedTC",
     },
     {
+      name: "NetworkingBot",
+      genre: "Automation",
+      description:
+        "Personal job-search automation tool that reads a Google Sheets company tracker, scrapes LinkedIn message threads via Playwright, and sends a daily digest email surfacing who to follow up with.",
+      stack: ["Python", "Playwright", "Google Sheets API", "GitHub Actions"],
+      link: "https://github.com/AblazedTC/NetworkingBot",
+    },
+    {
       name: "Jordan Wrapped",
       genre: "Creative Dev",
       description:
@@ -124,12 +132,12 @@ export const skillJump = {
   kicker: "Biggest Skill Jump",
   headline: "Major skill growth",
   skills: [
-    { name: "LeetCode / DSA consistency", before: 30, after: 82 },
-    { name: "System Design (URL Shortener, CAP tradeoffs)", before: 35, after: 78 },
-    { name: "Backend Architecture", before: 45, after: 88 },
-    { name: "C++ / low-level audio foundations", before: 18, after: 64 },
+    { name: "LeetCode / DSA", from: "Inconsistent", to: "Daily practice" },
+    { name: "System Design", from: "Surface-level", to: "Can design & defend" },
+    { name: "Backend Architecture", from: "Framework user", to: "System thinker" },
+    { name: "C++ / Audio DSP", from: "Zero", to: "Functional DSP tools" },
   ],
-  footnote: "160+ LeetCode problems this year plus repeated URL-shortener design reps.",
+  footnote: "160+ LeetCode problems this year. System design reps: client-server, caching, rate limiting, DB sharding, and URL shortener.",
 };
 
 export const internships = {
@@ -139,7 +147,7 @@ export const internships = {
     {
       company: "NICE",
       role: "AI Solutions Engineer Intern",
-      period: "Sep - Dec 2025",
+      period: "Sep 2025 - Dec 2025",
       points: [
         "Built an MVP AI platform for real-time 911 transcription, sentiment analysis, and QA scoring with FastAPI, MongoDB, and OpenAI",
         "Developed modular REST APIs with JWT auth and role-based access control",
@@ -159,11 +167,10 @@ export const internships = {
     {
       company: "ADP",
       role: "Application Developer Intern",
-      period: "Summer 2026",
+      period: "May 2026 - Aug 2026",
       points: [
-        "Shipped features on production backend services and APIs",
-        "Worked inside enterprise release cycles and review gates",
-        "Strengthened habits around code review and delivery discipline",
+        "Automated 50 REST API endpoints with Java/Spring Boot + Cucumber/TestNG, lifting coverage from 63% to 93% and saving 25 hrs/week of manual testing",
+        "Refactored MPV2 delete service with SOR-aware routing, better HTTP error handling, and expanded Groovy unit tests for failure and regression paths",
       ],
     },
   ],

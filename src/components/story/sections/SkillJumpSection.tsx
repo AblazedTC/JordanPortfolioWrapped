@@ -38,23 +38,14 @@ export default function SkillJumpSection() {
               <span className="text-lg font-black uppercase sm:text-2xl">
                 {s.name}
               </span>
-              <span className="font-display text-lg tabular-nums sm:text-2xl">
-                {s.before} →{" "}
-                <span className="js-count" data-value={s.after}>
-                  0
-                </span>
+              <span className="font-display text-lg sm:text-2xl">
+                {s.from} → <span className="text-[var(--acc)] underline decoration-4 underline-offset-4 [text-decoration-skip-ink:none]">{s.to}</span>
               </span>
             </div>
+            {/* aesthetic two-tone bar: left half ghost, right half solid */}
             <div className="relative h-6 w-full border-[3px] border-black sm:h-8">
-              {/* "before" ghost bar */}
-              <div
-                className="absolute inset-y-0 left-0 bg-black/25"
-                style={{ width: `${s.before}%` }}
-              />
-              <div
-                className="js-bar absolute inset-y-0 left-0 bg-black"
-                style={{ width: `${s.after}%` }}
-              />
+              <div className="absolute inset-y-0 left-0 w-1/2 bg-black/25" />
+              <div className="js-bar absolute inset-y-0 left-0 bg-black" style={{ width: "85%" }} />
             </div>
           </div>
         ))}

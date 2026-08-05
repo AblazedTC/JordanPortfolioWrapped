@@ -107,7 +107,6 @@ export default function IntroSection() {
         <p data-animate className="mt-3 max-w-md text-sm opacity-80">
           {personal.subheading}
         </p>
-
         <Waveform bars={32} className="mt-10 h-14 max-w-sm text-[var(--acc)]" />
 
         <div data-animate className="mt-12 flex items-center gap-3">
